@@ -1,5 +1,9 @@
 package Journal;
 
+/***
+ * Scripture class. Primarily used for holding data
+ * @author Mark
+ */   
 public class Scripture {
 
     String book;
@@ -7,40 +11,7 @@ public class Scripture {
     int startverse;
     int endverse;
     
-    public Scripture() {
-    }
-    
-    public Scripture(String book, int chapter, int startverse, int endverse) {
-        this.book = book;
-        this.chapter = chapter;
-        this.startverse = startverse;
-        this.endverse = endverse;
-    }
-    
-    public Scripture(String book, int chapter, int startverse) {
-        this.book = book;
-        this.chapter = chapter;
-        this.startverse = startverse;
-    }
-
-    public Scripture(String book, int chapter) {
-        this.book = book;
-        this.chapter = chapter;
-    }
-    
-    public String display() {
-        String rString = book + " " + chapter;
-        
-        if(startverse > 0) {
-            rString += ":" + startverse;
-            
-            if (endverse > 0) {
-                rString += "-" + endverse;
-            }
-        }
-        return rString;
-    }
-
+    //GETTERS AND SETTERS START
     public String getBook() {
         return book;
     }
@@ -72,4 +43,45 @@ public class Scripture {
     public void setEndverse(int endverse) {
         this.endverse = endverse;
     }  
+    //GETTERS AND SETTERS END
+    
+    //CONSTRUCTORS
+    public Scripture() {
+    }
+    
+    public Scripture(String book, int chapter, int startverse, int endverse) {
+        this.book = book;
+        this.chapter = chapter;
+        this.startverse = startverse;
+        this.endverse = endverse;
+    }
+    
+    public Scripture(String book, int chapter, int startverse) {
+        this.book = book;
+        this.chapter = chapter;
+        this.startverse = startverse;
+    }
+
+    public Scripture(String book, int chapter) {
+        this.book = book;
+        this.chapter = chapter;
+    }
+    //END CONSTRUCTORS
+    
+    /***
+ * display() used for displaying the scripture in book 1:13-14 format
+ * @author Mark
+ */   
+    public String display() {
+        String rString = book + " " + chapter;
+        
+        if(startverse > 0) {
+            rString += ":" + startverse;
+            
+            if (endverse > 0) {
+                rString += "-" + endverse;
+            }
+        }
+        return rString;
+    }
 }
