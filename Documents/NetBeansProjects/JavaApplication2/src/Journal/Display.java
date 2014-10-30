@@ -8,22 +8,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-/**
- *
- * @author Jonny
+/***
+ * Display class. Used to display journal (specifically in the output window)
+ * @author Mark
  */
 public class Display {
     Map<String, Entry> entries = new TreeMap<>();
     
+    //Constructor for entries
     public Display(Map<String, Entry> entries) {
         this.entries = entries;
     }
-
+    //Constructor for no parameters
+    public Display() {
+    }
+    
+    //GETTERS AND SETTERS
     public Map<String, Entry> getEntries() {
         return entries;
     }
@@ -31,10 +31,9 @@ public class Display {
     public void setEntries(Map<String, Entry> entries) {
         this.entries = entries;
     }
+    //GETTERS AND SETTERS END
     
-    public Display() {
-    }
-    
+    //DISPLAYS JOURNAL
     public final void display() {
         System.out.println("Journal Display:");
         List<String> keys = new ArrayList<>(entries.keySet());
@@ -43,7 +42,10 @@ public class Display {
             System.out.println(entries.get(key).display() + "\n");
         }
     }
-    
+    /***
+    * Displays Scripture references that are within the entry.
+    * @author Mark
+    */
     public final void displayBookReferences() {
         HashMap<String, List<String>> bookMap = new HashMap<>();
         
@@ -74,6 +76,10 @@ public class Display {
         displayMap(bookMap);
     }
     
+    /***
+    * Displays Topic references that are within the entry.
+    * @author Mark
+    */
     public final void displayTopicReferences() {
         HashMap<String, List<String>> topicMap = new HashMap<>();
         

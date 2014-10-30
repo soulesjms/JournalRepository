@@ -2,15 +2,18 @@ package Journal;
 
 import java.util.ArrayList;
 import java.util.List;
-
+ /***
+ * Entry class: primarily used as the data holder of all the functions of other classes. 
+ * @author Mark
+ */   
 public class Entry {
     private String content;
     private String date;
     private List<String> topics = new ArrayList<>();
     private List<Scripture> scriptures = new ArrayList<>();
 
-    public Entry() { //default constructor
-
+    //DEFAULT CONSTRUCTORS
+    public Entry() {
     }
 
     public Entry(String content, String date, List<String> topics, List<Scripture> scripture) {
@@ -25,6 +28,7 @@ public class Entry {
         this.date = date;
     }
 
+    //GETTERS AND SETTERS START
     public String getContent() {
         return content;
     }
@@ -56,15 +60,20 @@ public class Entry {
     public void setScripture(List<Scripture> scripture) {
         this.scriptures = scripture;
     }
+    //GETTERS AND SETTERS END
     
+    //ADD TOPIC TO TOPICS LIST
     public void addTopic(String topic) {
         this.topics.add(topic);
     }
-    
+    //ADD SCRIPTURE TO SCRIPTURES LIST
     public void addScripture(Scripture scr) {
         this.scriptures.add(scr);
     }
-    
+ /***
+ * display(): displays entry. (used in Journal's main, not in gui)
+ * @author Mark
+ */   
     public String display() {
         String rString = "Entry Display:\n" +"Date : " + date + "\n";
         for (Scripture scripture : scriptures) {
@@ -76,7 +85,10 @@ public class Entry {
         rString = rString + "\n" + content + "\n";
         return rString;
     }
-    
+ /***
+ * populates the topics list. It fills the list with terms, and their synonyms.
+ * @author Mark
+ */   
     public List<String> generateTopicList() {
         List<String> list = new ArrayList<>();
         
@@ -87,7 +99,10 @@ public class Entry {
         }
         return list;
     }
-    
+/***
+ * populates the scriptures list. It fills the list with just the book names, not verses.
+ * @author Mark
+ */   
     public List<String> generateScriptureList() {
         List<String> list = new ArrayList<>();
         

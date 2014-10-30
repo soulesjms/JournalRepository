@@ -24,6 +24,16 @@ import org.w3c.dom.Element;
 /***
  * Journal Class. This is where all the information is stored into the sub-classes for journal. Also
  * this is where reading and getting of files happens.
+ * 
+ * IMPORTANT NOTE: I fully acknowledge that I collaborated with several individuals who are also in 
+ * CS246, namely Tyson Graham and other collaborators in the group. I did use many of my own methods and
+ * organization of code. Code that was done as a group (and as such our code will be similar or the same):
+ * 
+ * ScriptureFinder class, 
+ * Display class, 
+ * JournalProperties class.
+ * 
+ * Other classes I personally changed much of what the group did. 
  * @author Mark
  */
 public class Journal {
